@@ -63,42 +63,12 @@ tl.from("#hero-btm h4",{
 })
 
 }
-function mouseFlollower(scalex,scaley,rotx){
-    window.addEventListener("mousemove",function(dets){
-       document.querySelector("#miniCircle").style.transform = `translate(${dets.x}px,${dets.y}px) scale(${scalex},${scaley})`
-    })
-}
-function adateda(){
-    var timeout
-    var prex = 0;
-    var prey = 0;
-    
-    var scalex = 1;
-    var scaley = 1;
-    
-    document.addEventListener("mousemove",function(dets){
-    
-    clearTimeout(timeout)
-    
-        scalex = gsap.utils.clamp(0.8,1.2, dets.x - prex)
-        scaley = gsap.utils.clamp(0.8,1.2, dets.y - prey)
-    
-        prex = dets.x
-        prey = dets.y
-    
-    timeout = setTimeout(() => {
-        document.querySelector("#miniCircle").style.transform = `translate(${dets.x}px,${dets.y}px) scale(1,1) `
-    }, 100);
-    
-        mouseFlollower(scalex,scaley)
-    })
-    
-}
-
-anime()
-mouseFlollower()
-locoScroll()
-adateda()
+Shery.mouseFollower({
+    //Parameters are optional.
+    skew: true,
+    ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+    duration: 1,
+  });
 
 
 document.querySelectorAll(".elem").forEach(function(elem){
@@ -130,3 +100,7 @@ document.querySelectorAll(".elem").forEach(function(elem){
     })
 
 })
+
+anime()
+mouseFlollower()
+locoScroll()

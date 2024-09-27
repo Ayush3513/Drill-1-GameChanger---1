@@ -81,7 +81,7 @@ html, body {
 }
 
 #hero-btm {
-    margin-top: 6vw;
+    margin-top: 13vw;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -106,7 +106,7 @@ html, body {
 }
 
 #hero-btm2 h5 i {
-    font-size: 2vw;
+    font-size: 1vw;
     color: #a3a3a3;
 }
 
@@ -141,6 +141,9 @@ html, body {
     transform: translate(-50%, -50%);
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
     transform-origin: center;
+    pointer-events: none;
+    width:  20vw;
+    object-fit: cover;
 }
 
 .elem:nth-child(3) {
